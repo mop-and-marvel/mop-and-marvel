@@ -1,0 +1,202 @@
+/* 📖 About Page Base Styles */
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 254, 252, 0.85); /* warm off-white tint */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🎥 Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🧽 Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 254, 252, 0.85);
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  color: #007a3f;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* 🌟 Mission Section */
+.about-mission {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255, 254, 252, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-mission h2 {
+  font-size: 2rem;
+  color: #007a3f;
+  margin-bottom: 1rem;
+}
+
+.about-mission p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 💖 Core Values */
+.about-values {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255, 254, 252, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-values h2 {
+  font-size: 2rem;
+  color: #007a3f;
+  margin-bottom: 1rem;
+}
+
+.about-values ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.about-values li {
+  margin-bottom: 1rem;
+}
+
+/* 📞 Call to Action */
+.about-cta {
+  text-align: center;
+  padding: 2rem;
+  background-color: #007a3f;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+}
+
+.about-cta a {
+  color: #d1a400;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* 🧼 Footer */
+footer {
+  background: #000;
+  color: #d1a400;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/*navbar adjustments specifically for about page*/
+/* 🧭 Navbar (About Page) */
+.about-page .navbar {
+  background-color: #007a3f;
+  color: #d1a400;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-page .navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d1a400;
+}
+
+.about-page .navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.about-page .navbar .nav-links a {
+  text-decoration: none;
+  color: #d1a400;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.about-page .navbar .nav-links a:hover {
+  background-color: #009f50;
+  color: #fff;
+}
+
+/* 📞 Call Button */
+.about-page .call-button a {
+  background-color: #007a3f;
+  color: #d1a400;
+  border: 2px dashed #d1a400;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.about-section {
+  background-color: rgba(255, 254, 252, 0.85); /* soft off-white */
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  color: #007a3f; /* Mop & Marvel green */
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
+}

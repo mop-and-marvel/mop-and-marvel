@@ -1,0 +1,89 @@
+/* Reset defaults color for entire website */
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 
+  color: #333;
+  text-align: center;
+}
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 15px;
+
+}
+
+/* Big heading */
+.site-title {
+  font-size: 4rem;   /* bigger brand name */
+  font-weight: 900;
+  color: #007a3f;    /* green from flyer */
+  margin-bottom: 0.5rem;
+}
+
+/* Tagline flows below */
+.tagline {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 20px;
+  font-style: italic;
+  position: relative;
+  top: -40px; /* This moves the text up*/
+  margin-left: 130px; /* Adjust this value to move the text to the right */
+  font-weight: bold;
+
+}
+/* Lady image, smaller */
+.hero-img img {
+  max-width: 220px;   /* control image size */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+/* Phone icon and number styling */
+.contact-number svg {
+  fill: orange;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+/* Navbar Mop & Marvel to left top of the screen and controls the entire green bar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px; /* Reduced padding for a slimmer navbar */
+  background: #007a3f;
+  color: #d1a400;
+}
+.navbar .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.navbar .nav-links {
+  background-color: transparent; /* Ensure background is transparent  to match nav*/
+  list-style: none;
+  display: flex;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+/* this is for the Navbar with home, about services testimonials contact */
+.navbar .nav-links a {
+  background-color: #007a3f;
+  margin-left: 100px; /* Pushes links to the right */
+  color: #d1a400; /* Explicitly set your yellow text */
+  text-decoration: none;
+  padding: 6px 2px;
+  margin: 0;
+  display: inline-block; /* Ensures background fills the area */
+}
+/* Section headings */
+h2 {
+  font-size: 2rem;
+  color: #007a3f;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mop & Marvel</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body class="home-page"> 
+    <nav class="navbar">
+        <div class="logo">Mop & Marvel</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="call-button">
+            <a href="tel:5197743749">Call Us: 519-774-3749</a>
+        </div>
+    </nav>
+        <header class="hero">
+        <div class="hero-text">
+            <h1 class="site-title">We Don’t Just Clean – We Marvel</h1> 
+            </div>
+        <div class="hero-img">
+            <img class="insurance-badge" src="images/insurance.png" alt="Insured and Bonded Badge" />
+            <img class="cleaning-lady" src="images/lady.jpg" alt="Cleaning Lady" />
+            <img class="mop-image" src="images/mop.png" alt="Moping Lady" />
+        </div>
+    </header>
+
+    <section class="Services" id="Services">
+        <h2>Our Services</h2>
+        <div class="Service-cards">
+            <div class="card">
+                <i class="fa-solid fa-house"></i>
+                <h3>Residential Cleaning</h3>
+                <p>Transform your home into a spotless, relaxing space with our trusted cleaning team.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-building"></i>
+                <h3>Commercial Cleaning</h3>
+                <p>Keep your workplace sparkling clean and professional with our flexible cleaning solutions.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-bed"></i>
+                <h3>Airbnb Cleaning</h3>
+                <p>Impress your guests every time with quick, reliable, and detailed cleaning for short stays.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-tractor"></i>
+                <h3>Farm Worker Accommodation Prep</h3>
+                <p>We prepare clean, comfortable, and welcoming housing for farm workers to settle in with ease.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose Us</h2>
+        <ul> 
+            <p>✅ Flexible Scheduling</p>
+            <p>😊 Friendly, Trustful Team</p>
+            <p>🔍 Attention to Detail</p>
+            <p>🌿 Eco-Friendly Products & Methods</p>
+        </ul>
+    </section>
+
+    <section class="offer">
+        <h2>Limited Time Offer</h2>
+        <p>Book Today & Save <span>10%</span> on your first cleaning!</p>
+        <a href="contact.html" class="btn">Book Now</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Mop & Marvel. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

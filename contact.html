@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Mop & Marvel</title>
+    <link rel="stylesheet" href="css/contact.css" /> 
+</head>
+<body class="contact-page"> 
+
+    <nav class="navbar">
+        <div class="logo">Mop & Marvel</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="call-button">
+            <a href="tel:5197743749">Call Us: 519-774-3749</a>
+        </div>
+    </nav>
+ <!-- 🎥 Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="images/Vaccum.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script type="text/javascript">
+       (function(){
+           emailjs.init({
+             publicKey: "DumK6qSSekRqQCg7-", // Verify this key is correct
+           });
+       })();
+    </script>
+    
+    <script src="contact.js"></script> 
+</head>
+    <section class="contact-section">
+        <h2>PRICING IS BASED ON A FREE INITIAL ASSESSMENT</h2>
+        <div class="contact-container">
+            
+            <div class="contact-form">
+                <form id="contact-form"> 
+                    
+                    <div class="form-group-inline">
+                        <input type="text" id="first-name" name="First_Name" placeholder="First Name" required />
+                        <input type="text" id="last-name" name="Last_Name" placeholder="Last Name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject: Tell us if it is Residental, Airbnb, Commercial, or Farm Prep" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="Email" placeholder="Email Address" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="Phone" placeholder="Phone Number (Optional)" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="Message" placeholder="Please tell us about your cleaning needs..." rows="5" required></textarea>
+                    </div>
+                    
+                    <div>
+                      <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                           </div>
+
+        </div> </section>
+
+    <footer>
+        <p>© 2025 Mop & Marvel. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

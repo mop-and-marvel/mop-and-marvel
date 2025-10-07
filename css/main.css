@@ -451,3 +451,63 @@ footer {
 footer p {
     margin: 0; /* Remove default paragraph margin */
 }
+/* =========================================================
+   MOBILE RESPONSIVENESS FIX (max-width: 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* CRITICAL FIX 1: Body/Section Overrides */
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 15px; /* Adjusts section padding */
+    }
+    
+    /* CRITICAL FIX 2: Aggressive Navbar Reset */
+    .navbar {
+        /* Overrides desktop Flex/Grid */
+        display: block; 
+        
+        width: 100%;
+        padding: 15px 10px; 
+    }
+
+    .logo, .call-button {
+        display: block; 
+        text-align: center;
+        margin: 10px 0; /* Add vertical space */
+    }
+
+    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
+    .nav-links {
+        display: block; /* Ensures links stack vertically */
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        display: block; 
+        padding: 5px 0;
+    }
+
+    /* Content Fixes */
+    /* Forces any side-by-side content (like services) to stack */
+    .services-container, .about-content {
+        flex-direction: column !important; 
+        padding: 10px;
+    }
+
+    /* Ensures all images scale down */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

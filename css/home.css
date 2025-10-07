@@ -1,89 +1,513 @@
-/* Reset defaults color for entire website */
-body {
-  margin: 0;
-  background-color: white;
-  font-family: 
-  color: #333;
-  text-align: center;
+/* 🌐 Shared Styles for All Pages */
+/* Your HTML now uses the .home-page class, so these are active */
+.home-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
-/* Hero section */
+
+/* ___________________________________________________________________ */
+/* NAVBAR STYLES                             */
+/* ___________________________________________________________________ */
+
+/* ✅ Scoped Navbar for Home Page - The main green container */
+.home-page .navbar {
+    background-color: #007a3f; /* Dark Green */
+    color: #d1a400; /* Gold/Orange-Yellow */
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.home-page .navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d1a400; 
+    flex-grow: 0; 
+}
+
+/* The Navigation Links Group */
+.home-page .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; 
+    justify-content: flex-end; 
+    margin-right: 20px; 
+}
+
+.home-page .nav-links a {
+    text-decoration: none;
+    color: #d1a400; 
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease;
+}
+
+.home-page .nav-links a:hover {
+    color: #ffffff; 
+}
+
+/* This targets the 'Call Us' button wrapper */
+.home-page .call-button {
+    /* Ensure the button stays on the far right */
+    flex-grow: 0; 
+}
+
+/* This styles the button itself (The Call Us: 519-...) */
+.home-page .call-button a {
+    /* The border must be solid or dashed to look like the image */
+    border: 2px dashed #d1a400; 
+    background-color: #007a3f; 
+    color: #d1a400; 
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HIDE the extra phone number element added in the HTML, as it wasn't in the original design */
+.home-page .contact-number {
+    display: none; 
+}
+
+/* ___________________________________________________________________ */
+/* HERO SECTION                              */
+/* ___________________________________________________________________ */
+
+/* REQUIRED: This anchors all absolute-positioned children (the images) */
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 15px;
-
+    /* REQUIRED: This anchors all absolute-positioned children (the images) */
+    position: relative; 
+    
+    /* Ensure there is enough vertical space to see all the images */
+    min-height: 300px; 
+    
+    /* REMOVE: display: flex;
+       This is often what causes absolute positioning issues within a complex hero layout. */
+    
+    padding: 1px; 
 }
 
-/* Big heading */
-.site-title {
-  font-size: 4rem;   /* bigger brand name */
-  font-weight: 900;
-  color: #007a3f;    /* green from flyer */
-  margin-bottom: 0.5rem;
+/* Remove or simplify the hero-img container */
+.hero-img {
+    /* If the images are direct children of .hero, this block is not needed. */
+    /* If you must keep it, ensure it's simple: */
+    position: relative; 
+    width: 100%; /* Ensure it spans the full width */
+    min-height: 400px;
+  }
+
+.hero {
+    /* ... */
+    padding-top: 10px; /* Example: reduces space at the top */
+    padding-left: 10px; /* keeps left/right padding the same */
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
-/* Tagline flows below */
-.tagline {
-  font-size: 1.4rem;
-  color: #444;
-  margin-bottom: 20px;
-  font-style: italic;
-  position: relative;
-  top: -40px; /* This moves the text up*/
-  margin-left: 130px; /* Adjust this value to move the text to the right */
-  font-weight: bold;
-
-}
-/* Lady image, smaller */
-.hero-img img {
-  max-width: 220px;   /* control image size */
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-/* Phone icon and number styling */
-.contact-number svg {
-  fill: orange;
-  margin-right: 8px;
-  width: 24px;
-  height: 24px;
-}
-/* Navbar Mop & Marvel to left top of the screen and controls the entire green bar*/
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 20px; /* Reduced padding for a slimmer navbar */
-  background: #007a3f;
-  color: #d1a400;
-}
-.navbar .logo {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.navbar .nav-links {
-  background-color: transparent; /* Ensure background is transparent  to match nav*/
-  list-style: none;
-  display: flex;
-  gap: 1px;
-  margin: 0;
-  padding: 0;
+/* ___________________________________________________________________ */
+/* Background Image Styles                                             */
+/* ___________________________________________________________________ */
+/* --- CRITICAL FIX FOR EDGE-TO-EDGE COVERAGE --- */
+html, body {
+    /* Eliminates tiny default margins often applied by browsers */
+    margin: 0; 
+    padding: 0;
+    /* Forces the height of the elements to span the entire viewport */
+    height: 100%; 
+    min-height: 100%;
+    /* Ensure no horizontal scrolling appears if content is too wide */
+    width: 100%;
+    overflow-x: hidden; 
 }
 
-/* this is for the Navbar with home, about services testimonials contact */
-.navbar .nav-links a {
-  background-color: #007a3f;
-  margin-left: 100px; /* Pushes links to the right */
-  color: #d1a400; /* Explicitly set your yellow text */
-  text-decoration: none;
-  padding: 6px 2px;
-  margin: 0;
-  display: inline-block; /* Ensures background fills the area */
+/* --- Background Image Styles --- */
+.home-page {
+    /* The .home-page class is on your body tag, ensuring full coverage */
+    
+    /* Set margins/padding to zero for this body class as well */
+    margin: 0;
+    padding: 0;
+    
+    /* Path Correction: Ensure this path is correct based on your file structure */
+    background-image: url('../images/background main.png');
+    
+    /* CRITICAL: Scales the image to cover the entire container */
+    background-size: cover; 
+    
+    /* Fixes the image in place so it doesn't scroll with content */
+    background-attachment: fixed; 
+    
+    /* Centers the image within the container */
+    background-position: center center; 
+    
+    /* Prevents tiling */
+    background-repeat: no-repeat;
 }
-/* Section headings */
-h2 {
-  font-size: 2rem;
-  color: #007a3f;
-  margin-bottom: 20px;
+
+/* ___________________________________________________________________ */
+/* Heading - We Don't Just Clean - We Marvel Hero Section              */
+/* ___________________________________________________________________ */
+/* Styling for the main H1 heading in the Hero section */
+.hero .site-title {
+    /* --- Alignment --- */
+    text-align: center;
+    
+    /* --- Color --- */
+    color: #007a3f; /* Dark Green - Use your brand green */
+    
+    /* --- Size Control --- */
+    font-size: 3rem; /* Adjust this value (e.g., 3.5rem, 4rem) to change the size */
+    font-weight: bold;
+    
+    /* --- Spacing --- */
+    margin-top: 50px; /* Adjust spacing below the navbar */
+    margin-bottom: 20px;
+    
+    /* Ensure the text spans the full width of the container */
+    width: 100%;
+}
+
+/* ___________________________________________________________________ */
+/* IMAGE STYLES                             */
+/* ___________________________________________________________________ */
+
+/* Insurance badge adjustments */
+.insurance-badge {
+    position: absolute; 
+    
+    /* Try 0px to force it to the very top corner */
+    bottom: 277px;    
+    left: 630px;   
+
+    /* Sizing */
+    width: 80px; 
+    height: auto; 
+    
+    /* Layering: Use a massive z-index to ensure visibility */
+    z-index: 9999; 
+    
+    /* Visual Styles */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the cleaning lady image (LADY.JPG) */
+.cleaning-lady {
+    /* Positioning */
+    position: absolute;
+    bottom: 60px; 
+    right: 620px;
+    
+    /* Sizing (Consolidated and adjusted) */
+    width: 250px; /* Use 250px for a smaller size */
+    max-width: 80%; 
+    height: auto; 
+    
+    /* Display and Visual Styles */
+    display: block; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    object-fit: cover; 
+}
+
+/* ___________________________________________________________________ */
+/* MOP IMAGE ANIMATION                       */
+/* ___________________________________________________________________ */
+
+/* Defines the back-and-forth motion */
+@keyframes mopSlide {
+    0% {
+        transform: translateX(0); 
+    }
+    50% {
+        transform: translateX(-40px); /* Slides 40px left */
+    }
+    100% {
+        transform: translateX(0); /* Returns to start (completes the cycle) */
+    }
+}
+
+.mop-image {
+    /* --- Positioning --- */
+    position: absolute;
+    /* Adjust these values to position the mop freely */
+    bottom: 450px; /* Example: 300px up from the bottom (this helps me move it to the top) of the hero section */
+    left: 800px;  /* Example: 10px from the left of the hero section */
+    
+    /* --- Sizing (Adjust as needed) --- */
+    width: 200px; /* Example size */
+    height: auto;
+    
+    /* --- Animation Properties --- */
+    /* 1. Apply the animation name */
+    animation-name: mopSlide; 
+    /* 2. Set the duration of one full back-and-forth cycle */
+    animation-duration: 2s; 
+    /* 3. Make the motion continuous (never stop) */
+    animation-iteration-count: infinite; 
+    /* 4. Ensure it goes back and forth smoothly, not just instantly resetting */
+    animation-direction: alternate; 
+    /* 5. Set the motion speed (optional: 'ease-in-out' makes it slow down at the edges) */
+    animation-timing-function: ease-in-out; 
+}
+
+/* Applies the animation to the mop lady image (MOP.PNG) */
+.mop-image {
+        
+    /* ⭐ Sizing: Change this value to resize the image! */
+    width: 100px; /* Example: Use 50px for smaller, 150px for larger */
+    height: auto;
+    
+    /* Animation Properties (These remain the same) */
+    animation-name: mopSlide; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; 
+    animation-timing-function: ease-in-out; 
+}
+
+/* ___________________________________________________________________ */
+/* OTHER SECTIONS                              */
+/* ___________________________________________________________________ */
+
+/* 📞 Call to Action */
+.main-cta {
+    text-align: center;
+    padding: 2rem;
+    background-color: #007a3f;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 2rem auto;
+}
+
+.main-cta a {
+    color: #d1a400;
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* ___________________________________________________________________ */
+/* Our Services Section                           */
+/* ___________________________________________________________________ */
+.Services {
+    padding: 10px 20px;
+    text-align: center;
+    
+}
+
+.Services h2 {
+    font-size: 2.5rem;
+    color: #007a3f; /* Dark Green Title */
+    margin-bottom: 40px;
+}
+
+.Service-cards {
+    display: grid;
+    /* Creates 4 equal columns on large screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #007a3f; /* Dark Green Card Background */
+    text-weight: bold;
+    padding: 30px;
+    border-radius: 12px;
+    /* Subtle hover effect to show interaction */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+}
+
+.card i {
+    font-size: 2.5rem;
+    color: #d1a400; /* Gold Icon Color */
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+/* ___________________________________________________________________ */
+/* Why Choose Us Section                           */
+/* ___________________________________________________________________ */
+.why-choose {
+    background-color: transparent 70%; /* Semi-transparent background */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.why-choose h2 {
+    font-size: 2rem;
+    color: #007a3f;
+    margin-bottom: 30px;
+}
+
+/* Use flexbox to center the content cleanly */
+.why-choose ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 500px; /* Keep the list narrow and centered */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+/* Since you used <p> inside the <ul>, style the p tags */
+.why-choose ul p {
+    margin: 0; 
+    padding: 5px 0;
+    font-weight: bold;
+    border-bottom: 1px dashed #ddd; /* Subtle separator */
+}
+/* ___________________________________________________________________ */
+/* Limited Time Offer Section                           */
+/* ___________________________________________________________________ */
+
+.offer {
+    background-color: #007a3f; /* Dark Green Brand Color */
+    border-radius: 12px;
+    color: #d1a400;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.offer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: 
+}
+
+.offer p {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.offer span {
+    color: white; /* Gold/Orange-Yellow */
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.offer .btn {
+    /* Style the Book Now button */
+    display: inline-block;
+    background-color: #d1a400; /* Gold/Orange Button */
+    color: #007a3f;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.offer .btn:hover {
+    background-color: #ffc72c; /* Lighter gold on hover */
+}
+/* ___________________________________________________________________ */
+/* Footer @2025                          */
+/* ___________________________________________________________________ */
+/* Footer Styling */
+footer {
+    /* Full-width container */
+    width: 100%;
+    
+    /* Background and text color */
+    background-color: #333; /* Dark background for contrast */
+    color: #d1a400; /* Gold text for readability */
+    
+    /* Spacing */
+    padding: 15px 0;
+    
+    /* Alignment */
+    text-align: center;
+    font-size: 0.9rem;
+    
+    /* Ensure it stays at the very bottom */
+    margin-top: auto; 
+}
+
+/* Style the paragraph inside the footer */
+footer p {
+    margin: 0; /* Remove default paragraph margin */
+}
+/* =========================================================
+   MOBILE RESPONSIVENESS FIX (max-width: 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* CRITICAL FIX 1: Body/Section Overrides */
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 15px; /* Adjusts section padding */
+    }
+    
+    /* CRITICAL FIX 2: Aggressive Navbar Reset */
+    .navbar {
+        /* Overrides desktop Flex/Grid */
+        display: block; 
+        
+        width: 100%;
+        padding: 15px 10px; 
+    }
+
+    .logo, .call-button {
+        display: block; 
+        text-align: center;
+        margin: 10px 0; /* Add vertical space */
+    }
+
+    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
+    .nav-links {
+        display: block; /* Ensures links stack vertically */
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        display: block; 
+        padding: 5px 0;
+    }
+
+    /* Content Fixes */
+    /* Forces any side-by-side content (like services) to stack */
+    .services-container, .about-content {
+        flex-direction: column !important; 
+        padding: 10px;
+    }
+
+    /* Ensures all images scale down */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }

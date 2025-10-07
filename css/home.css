@@ -1,29 +1,37 @@
 /* 🌐 Shared Styles for All Pages */
 /* Your HTML now uses the .home-page class, so these are active */
-.home-page {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* ___________________________________________________________________ */
-/* NAVBAR STYLES                             */
-/* ___________________________________________________________________ */
-
-/* ✅ Scoped Navbar for Home Page - The main green container */
 .home-page .navbar {
-    background-color: #007a3f; /* Dark Green */
-    color: #d1a400; /* Gold/Orange-Yellow */
+    ...
     border-radius: 12px;
     width: 90%; 
     max-width: 1200px;
     margin: 20px auto;
     padding: 12px 24px;
+    ...
+}
+
+
+/* ___________________________________________________________________ */
+/* NAVBAR STYLES                             */
+/* ___________________________________________________________________ */
+
+/* 🟢 AFTER FIX: Allows for full-width background, but keeps content centered */
+.home-page .navbar {
+    background-color: #007a3f;
+    color: #d1a400;
+    
+    /* NEW: Force 100% width and remove side margins */
+    width: 100%; 
+    max-width: none; 
+    margin: 0; 
+    padding: 12px 24px;
+    
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    
+    /* Optional: Remove border-radius if you want it flush to the top edge */
+    /* border-radius: 0; */ 
 }
 
 .home-page .navbar .logo {
@@ -457,6 +465,24 @@ footer p {
 
 @media (max-width: 768px) {
     
+    /* ... (Existing mobile rules) ... */
+    
+    /* 🛑 NEW: Fix Services Section Grid */
+    .Service-cards {
+        /* Force single column layout */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    /* Content Fixes */
+    .services-container, .about-content {
+        flex-direction: column !important; 
+        padding: 10px;
+    }
+
+    /* ... (Rest of the mobile code) ... */
+}
+    
     /* CRITICAL FIX 1: Body/Section Overrides */
     body {
         width: 100%;
@@ -500,6 +526,92 @@ footer p {
 
     /* Content Fixes */
     /* Forces any side-by-side content (like services) to stack */
+    .services-container, .about-content {
+        flex-direction: column !important; 
+        padding: 10px;
+    }
+
+    /* Ensures all images scale down */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+/* =========================================================
+   MOBILE RESPONSIVENESS FIX (max-width: 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+    
+     section {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 15px; 
+    }
+    
+    /* CRITICAL FIX 2: Navbar Reset (Stacks logo, links, and button) */
+    .navbar {
+        display: block; 
+        width: 100%;
+        padding: 15px 10px; 
+    }
+
+    .logo, .call-button {
+        display: block; 
+        text-align: center;
+        margin: 10px 0; 
+    }
+
+    /* CRITICAL FIX 3: Nav Links Fix (Ensures links stack or wrap) */
+    .nav-links {
+        display: block; 
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        display: block; 
+        padding: 5px 0;
+    }
+
+    /* 🛑 CRITICAL FIX 4: Reset Image Absolute Positioning 🛑 */
+    
+    /* 1. Reset the image container height and centering */
+    .hero-img {
+        height: auto; /* Allow height to collapse */
+        display: flex; 
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; 
+        justify-content: center;
+        padding: 20px 0;
+    }
+    
+    /* 2. Reset ALL individual images to normal flow */
+    .hero-img img {
+        position: static !important; /* Forces normal flow, overriding desktop ABSOLUTE */
+        margin: 10px auto; 
+        max-width: 85%; /* Ensures images don't get too big */
+        
+        /* Clear any leftover absolute values */
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    /* 3. Cleanup specific image overrides */
+    .cleaning-lady {
+        border-radius: 8px; /* Optional: Makes it a square/rectangle on mobile */
+    }
+
+    .insurance-badge {
+        order: -1; /* Optional: Puts the badge above the cleaning lady */
+        max-width: 80px; 
+        margin-bottom: 20px;
+    }
+
+    /* Content Fixes */
     .services-container, .about-content {
         flex-direction: column !important; 
         padding: 10px;

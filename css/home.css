@@ -1,93 +1,89 @@
-/* 🌐 Shared Styles for All Pages */
-/* Your HTML now uses the .home-page class, so these are active */
-.home-page .navbar {
-    ...
-    border-radius: 12px;
-    width: 90%; 
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 12px 24px;
-    ...
-}
+/*==========================================================
+  Global / Reset Styles
+==========================================================*/
 
-
-/* ___________________________________________________________________ */
-/* NAVBAR STYLES                             */
-/* ___________________________________________________________________ */
-
-/* 🟢 AFTER FIX: Allows for full-width background, but keeps content centered */
-.home-page .navbar {
-    background-color: #007a3f;
-    color: #d1a400;
-    
-    /* NEW: Force 100% width and remove side margins */
-    width: 100%; 
-    max-width: none; 
-    margin: 0; 
-    padding: 12px 24px;
-    
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    
-    /* Optional: Remove border-radius if you want it flush to the top edge */
-    /* border-radius: 0; */ 
-}
-
-.home-page .navbar .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #d1a400; 
-    flex-grow: 0; 
-}
-
-/* The Navigation Links Group */
-.home-page .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    flex-grow: 1; 
-    justify-content: flex-end; 
-    margin-right: 20px; 
+    font-family: Arial, sans-serif;
 }
 
-.home-page .nav-links a {
-    text-decoration: none;
-    color: #d1a400; 
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: color 0.3s ease;
+/* Set a clean background for the contact page */
+.contact-page {
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
 }
 
-.home-page .nav-links a:hover {
-    color: #ffffff; 
-}
+/*==========================================================
+  Navigation Bar (navbar) - Green & Gold Theme
+==========================================================*/
 
-/* This targets the 'Call Us' button wrapper */
-.home-page .call-button {
-    /* Ensure the button stays on the far right */
-    flex-grow: 0; 
-}
-
-/* This styles the button itself (The Call Us: 519-...) */
-.home-page .call-button a {
-    /* The border must be solid or dashed to look like the image */
-    border: 2px dashed #d1a400; 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 1%;
+    /* BACKGROUND: Dark Green */
     background-color: #007a3f; 
-    color: #d1a400; 
-    padding: 8px 14px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Rounded edges to match sample */
+    border-radius: 15px; 
+    max-width: 70%; 
+    margin: 15px auto; 
+   
 }
 
-/* HIDE the extra phone number element added in the HTML, as it wasn't in the original design */
-.home-page .contact-number {
-    display: none; 
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    /* LOGO COLOR: Gold/Yellow */
+    color: #d8b200; 
 }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    /* LINK COLOR: Gold/Yellow */
+    color: #FFD700; 
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    /* LINK HOVER: White */
+    color: white;
+}
+
+.call-button a {
+    display: inline-block;
+    /* CALL BUTTON BG: Transparent */
+    background-color: transparent; 
+    /* CALL BUTTON TEXT: Gold/Yellow */
+    color: #FFD700; 
+    text-decoration: none;
+    padding: 8px 15px;
+    /* BORDER: Dotted Gold/Yellow border to match sample */
+    border: 2px dotted #FFD700; 
+    border-radius: 8px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.call-button a:hover {
+    /* Hover effect */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+}
+
 
 /* ___________________________________________________________________ */
 /* HERO SECTION                              */
@@ -459,84 +455,7 @@ footer {
 footer p {
     margin: 0; /* Remove default paragraph margin */
 }
-/* =========================================================
-   MOBILE RESPONSIVENESS FIX (max-width: 768px)
-   ========================================================= */
 
-@media (max-width: 768px) {
-    
-    /* ... (Existing mobile rules) ... */
-    
-    /* 🛑 NEW: Fix Services Section Grid */
-    .Service-cards {
-        /* Force single column layout */
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-    
-    /* Content Fixes */
-    .services-container, .about-content {
-        flex-direction: column !important; 
-        padding: 10px;
-    }
-
-    /* ... (Rest of the mobile code) ... */
-}
-    
-    /* CRITICAL FIX 1: Body/Section Overrides */
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
-    }
-
-    section {
-        width: 100%;
-        max-width: 100%;
-        padding: 40px 15px; /* Adjusts section padding */
-    }
-    
-    /* CRITICAL FIX 2: Aggressive Navbar Reset */
-    .navbar {
-        /* Overrides desktop Flex/Grid */
-        display: block; 
-        
-        width: 100%;
-        padding: 15px 10px; 
-    }
-
-    .logo, .call-button {
-        display: block; 
-        text-align: center;
-        margin: 10px 0; /* Add vertical space */
-    }
-
-    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
-    .nav-links {
-        display: block; /* Ensures links stack vertically */
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
-    }
-    
-    .nav-links li {
-        display: block; 
-        padding: 5px 0;
-    }
-
-    /* Content Fixes */
-    /* Forces any side-by-side content (like services) to stack */
-    .services-container, .about-content {
-        flex-direction: column !important; 
-        padding: 10px;
-    }
-
-    /* Ensures all images scale down */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
 /* =========================================================
    MOBILE RESPONSIVENESS FIX (max-width: 768px)
    ========================================================= */

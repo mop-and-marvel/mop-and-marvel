@@ -1,8 +1,90 @@
-/* 🌟 Services Page Styles */
-.services-page {
-  background-color: #f5f5f5;
-  font-family: 'Arial', sans-serif;
+//*==========================================================
+  Global / Reset Styles
+==========================================================*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
+
+/* Set a clean background for the contact page */
+.contact-page {
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/*==========================================================
+  Navigation Bar (navbar) - Green & Gold Theme
+==========================================================*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 1%;
+    /* BACKGROUND: Dark Green */
+    background-color: #007a3f; 
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Rounded edges to match sample */
+    border-radius: 15px; 
+    max-width: 70%; 
+    margin: 15px auto; 
+   
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    /* LOGO COLOR: Gold/Yellow */
+    color: #d8b200; 
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    /* LINK COLOR: Gold/Yellow */
+    color: #FFD700; 
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    /* LINK HOVER: White */
+    color: white;
+}
+
+.call-button a {
+    display: inline-block;
+    /* CALL BUTTON BG: Transparent */
+    background-color: transparent; 
+    /* CALL BUTTON TEXT: Gold/Yellow */
+    color: #FFD700; 
+    text-decoration: none;
+    padding: 8px 15px;
+    /* BORDER: Dotted Gold/Yellow border to match sample */
+    border: 2px dotted #FFD700; 
+    border-radius: 8px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.call-button a:hover {
+    /* Hover effect */
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+}
+/*==========================================================
+  Services Page Specific Styles
 
 /* 🧼 Services Section */
 .services {
@@ -331,33 +413,7 @@ footer {
         padding: 40px 15px; /* Adjusts section padding */
     }
     
-    /* CRITICAL FIX 2: Aggressive Navbar Reset */
-    .navbar {
-        /* Overrides desktop Flex/Grid */
-        display: block; 
-        
-        width: 100%;
-        padding: 15px 10px; 
-    }
-
-    .logo, .call-button {
-        display: block; 
-        text-align: center;
-        margin: 10px 0; /* Add vertical space */
-    }
-
-    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
-    .nav-links {
-        display: block; /* Ensures links stack vertically */
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
-    }
-    
-    .nav-links li {
-        display: block; 
-        padding: 5px 0;
-    }
+   
 
     /* Content Fixes */
     /* Forces any side-by-side content (like services) to stack */

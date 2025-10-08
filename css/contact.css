@@ -224,46 +224,42 @@ footer {
     font-size: 0.9em;
 }
 
-/*==========================================================
-  Media Queries (Responsiveness)
-==========================================================*/
+/* =========================================================
+   MOBILE RESPONSIVENESS FIX (max-width: 768px)
+   ========================================================= */
 
-@media (max-width: 900px) {
-    /* Stack the form and the image vertically */
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .contact-form {
+@media (max-width: 768px) {
+    
+     section {
         width: 100%;
-        padding-right: 0;
-        margin-bottom: 30px;
+        max-width: 100%;
+        padding: 40px 15px; 
     }
     
-    /* Make image wider on small screens when stacked */
-    .contact1-image { 
-        width: 80%; 
+    /* CRITICAL FIX 2: Navbar Reset (Stacks logo, links, and button) */
+    .navbar {
+        display: block; 
+        width: 100%;
+        padding: 15px 10px; 
+    }
+
+    .logo, .call-button {
+        display: block; 
+        text-align: center;
+        margin: 10px 0; 
+    }
+
+    /* CRITICAL FIX 3: Nav Links Fix (Ensures links stack or wrap) */
+    .nav-links {
+        display: block; 
+        width: 100%;
+        margin-top: 10px;
         text-align: center;
     }
-}
-
-@media (max-width: 600px) {
-    /* Stack navigation links */
-    .navbar {
-        flex-direction: column;
-        padding-bottom: 10px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        margin: 15px 0;
-    }
     
-    .call-button {
-        margin-top: 10px;
+    .nav-links li {
+        display: block; 
+        padding: 5px 0;
     }
 
     /* Stack first and last name fields (on small screen) */
@@ -275,65 +271,5 @@ footer {
     /* Makes stacked inputs full width on small screens */
     .form-group-inline input {
         width: 100%;
-    }
-}
-/* =========================================================
-   MOBILE RESPONSIVENESS FIX (max-width: 768px)
-   ========================================================= */
-
-@media (max-width: 768px) {
-    
-    /* CRITICAL FIX 1: Body/Section Overrides */
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
-    }
-
-    section {
-        width: 100%;
-        max-width: 100%;
-        padding: 40px 15px; /* Adjusts section padding */
-    }
-    
-    /* CRITICAL FIX 2: Aggressive Navbar Reset */
-    .navbar {
-        /* Overrides desktop Flex/Grid */
-        display: block; 
-        
-        width: 100%;
-        padding: 15px 10px; 
-    }
-
-    .logo, .call-button {
-        display: block; 
-        text-align: center;
-        margin: 10px 0; /* Add vertical space */
-    }
-
-    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
-    .nav-links {
-        display: block; /* Ensures links stack vertically */
-        width: 100%;
-        margin-top: 10px;
-        text-align: center;
-    }
-    
-    .nav-links li {
-        display: block; 
-        padding: 5px 0;
-    }
-
-    /* Content Fixes */
-    /* Forces any side-by-side content (like services) to stack */
-    .services-container, .about-content {
-        flex-direction: column !important; 
-        padding: 10px;
-    }
-
-    /* Ensures all images scale down */
-    img {
-        max-width: 100%;
-        height: auto;
     }
 }

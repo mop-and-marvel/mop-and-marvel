@@ -227,10 +227,10 @@ footer {
 }
 .about-section {
   background-color: rgba(255, 254, 252, 0.85); /* soft off-white */
-  padding: 2rem;
+  padding: .5rem;
   margin: 2rem auto;
   max-width: 800px;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
@@ -257,29 +257,28 @@ footer {
 
 @media (max-width: 768px) {
     
-    /* CRITICAL FIX 1: Body/Section Overrides */
-    body {
+     section {
         width: 100%;
         max-width: 100%;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
+        padding: 40px 15px; 
+    }
+    
+    /* CRITICAL FIX 2: Navbar Reset (Stacks logo, links, and button) */
+    .navbar {
+        display: block; 
+        width: 100%;
+        padding: 15px 10px; 
     }
 
-    section {
-        width: 100%;
-        max-width: 100%;
-        padding: 40px 15px; /* Adjusts section padding */
-    }
-    
-    
     .logo, .call-button {
         display: block; 
         text-align: center;
-        margin: 10px 0; /* Add vertical space */
+        margin: 10px 0; 
     }
 
-    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
+    /* CRITICAL FIX 3: Nav Links Fix (Ensures links stack or wrap) */
     .nav-links {
-        display: block; /* Ensures links stack vertically */
+        display: block; 
         width: 100%;
         margin-top: 10px;
         text-align: center;
@@ -290,16 +289,74 @@ footer {
         padding: 5px 0;
     }
 
-    /* Content Fixes */
-    /* Forces any side-by-side content (like services) to stack */
-    .services-container, .about-content {
-        flex-direction: column !important; 
-        padding: 10px;
+    /* 🛑 Hero Image Resets (Important for Home Page) */
+    .hero {
+        min-height: 400px; 
+    }
+    
+    .hero .site-title {
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
-    /* Ensures all images scale down */
-    img {
-        max-width: 100%;
+    .hero-img {
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        min-height: 400px;
     }
-}
+    
+    /* Reset ALL individual images to normal flow */
+    .hero-img .insurance-badge,
+    .hero-img .cleaning-lady,
+    .hero-img .mop-image {
+        position: static !important;
+        margin: 10px auto; 
+        left: auto; right: auto; top: auto; bottom: auto;
+    }
+
+    /* Mop Image: Disable Animation & Position for Mobile Stack */
+    .mop-image {
+        animation: none !important;
+        transform: none !important;
+        order: -2; 
+        max-width: 100px; 
+        margin-top: 10px; 
+    }
+
+    /* Insurance Badge Mobile Positioning */
+    .insurance-badge {
+        order: -1;
+        max-width: 60px;
+        margin-bottom: 10px;
+    }
+
+    /* Cleaning Lady Mobile Positioning */
+    .cleaning-lady {
+        order: 1;
+        max-width: 200px;
+    }
+
+    /* Service Card Stacking (Important for Services section) */
+    .Service-cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Content Flex Fixes */
+    .services-container, .about-content {
+        padding: 25px 15px; !important;
+        border-radius: 10px; !important;
+        margin: 10px 10px; !important;
+    }
+    
+    /* 3. Footer Fix */
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+    }

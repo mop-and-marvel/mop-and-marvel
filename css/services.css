@@ -1,5 +1,5 @@
-//*==========================================================
-  Global / Reset Styles
+/*==========================================================
+ Global / Reset Styles
 ==========================================================*/
 
 * {
@@ -16,8 +16,18 @@
     line-height: 1.6;
 }
 
+/* --- CRITICAL FIX FOR EDGE-TO-EDGE COVERAGE --- */
+html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%; 
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden; 
+}
+
 /*==========================================================
-  Navigation Bar (navbar) - Green & Gold Theme
+ Navigation Bar (navbar) - DESKTOP STYLES (Default)
 ==========================================================*/
 
 .navbar {
@@ -25,21 +35,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 1%;
-    /* BACKGROUND: Dark Green */
     background-color: #007a3f; 
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Rounded edges to match sample */
     border-radius: 15px; 
     max-width: 70%; 
     margin: 15px auto; 
-   
 }
 
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    /* LOGO COLOR: Gold/Yellow */
     color: #d8b200; 
 }
 
@@ -50,7 +56,6 @@
 }
 
 .nav-links a {
-    /* LINK COLOR: Gold/Yellow */
     color: #FFD700; 
     text-decoration: none;
     font-size: 1em;
@@ -59,19 +64,15 @@
 }
 
 .nav-links a:hover {
-    /* LINK HOVER: White */
     color: white;
 }
 
 .call-button a {
     display: inline-block;
-    /* CALL BUTTON BG: Transparent */
     background-color: transparent; 
-    /* CALL BUTTON TEXT: Gold/Yellow */
     color: #FFD700; 
     text-decoration: none;
     padding: 8px 15px;
-    /* BORDER: Dotted Gold/Yellow border to match sample */
     border: 2px dotted #FFD700; 
     border-radius: 8px; 
     font-weight: bold;
@@ -79,112 +80,79 @@
 }
 
 .call-button a:hover {
-    /* Hover effect */
     background-color: rgba(255, 255, 255, 0.1); 
     color: white;
 }
+
 /*==========================================================
-  Services Page Specific Styles
+ Services Page Specific Styles (Desktop/Default)
+==========================================================*/
 
-/* 🧼 Services Section */
+/* Services Section Container */
 .services {
-  padding: 60px 20px;
+    padding: 60px 20px;
 }
 
+/* Card Grid */
 .service-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
+/* Individual Service Card */
 .card {
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+/* Card Icons */
 .card i {
-  font-size: 2.5rem;
-  color: #d8b200;
-  margin-bottom: 15px;
+    font-size: 2.5rem;
+    color: #d8b200;
+    margin-bottom: 15px;
 }
 
-/* headings for Residential, Commercial, etc*/
+/* Card Headings (Residential, Commercial, etc) */
 .card h3 {
-  color: #007a3f;
-  padding: 8px 15px; 
-  background-color: #e5f5e5;
-  border: 1px solid #007a3f;
-  font-size: 1.1rem;
-  border-radius: 10px 5px 10px 5px; 
-  margin-bottom: 15px; 
+    color: #007a3f;
+    padding: 8px 15px; 
+    background-color: #e5f5e5;
+    border: 1px solid #007a3f;
+    font-size: 1.1rem;
+    border-radius: 10px 5px 10px 5px; 
+    margin-bottom: 15px; 
 }
 
+/* Service Images (Assuming you have these) */
 .service-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 12px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 12px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 🎥 Video Background */
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-background::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* 🖼️ Slideshow */
+/* --- Slideshow Styles (Consolidated) --- */
 .slideshow-container {
     position: relative;
     max-width: 100%;
     margin: 20px auto;
 }
 
-/* CRITICAL FIX: Ensure ALL slide groups are hidden by default */
-.mySlides,
-.mySlidesCommercial,
-.mySlidesAirbnb,
-.mySlidesFarm { /* <--- THIS MUST BE INCLUDED TO HIDE FARM SLIDES */
+.mySlides, .mySlidesCommercial, .mySlidesAirbnb, .mySlidesFarm { 
     display: none;
 }
 
-.mySlides img,
-.mySlidesCommercial img,
-.mySlidesAirbnb img,
-.mySlidesFarm img { /* Consolidated image styling */
+.mySlides img, .mySlidesCommercial img, .mySlidesAirbnb img, .mySlidesFarm img { 
     width: 100%;
     border-radius: 8px;
     transition: opacity 1s ease-in-out;
 }
 
-/* Navigation Arrows */
-.prev,
-.next {
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -195,18 +163,12 @@
     transition: 0.6s ease;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%; /* Keep your rounded arrow style */
+    border-radius: 50%;
 }
 
-.prev {
-    left: 10px;
-}
+.prev { left: 10px; }
+.next { right: 10px; }
 
-.next {
-    right: 10px;
-}
-
-/* Fading Animation */
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
@@ -217,186 +179,121 @@
     to { opacity: 1; }
 }
 
-/* Note: Ensure the JavaScript from the previous response is also present 
-   in your HTML file for the arrows to function. */
-.fade {
-  animation-name: fade;
-  animation-duration: 1s;
-}
 
-/* 🧭 Navbar */
-.services-page .navbar {
-  background-color: #007a3f;
-  color: #d1a400;
-  border-radius: 12px;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.services-page .navbar .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #d1a400;
-}
-
-.services-page .navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.services-page .navbar .nav-links a {
-  text-decoration: none;
-  color: #d1a400;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.services-page .navbar .nav-links a:hover {
-  background-color: #009f50;
-  color: #fff;
-}
-
-/* 📞 Call Button - this is for the one with the phone number */
-.call-button a {
-  background-color: #007a3f;
-  color: #d1a400;
-  border: 2px dashed #d1a400;
-  padding: 8px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.about-page h2,
-.services-page h2 {
-  text-align: center;
-  color: #007a3f; /* Mop & Marvel green */
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-/*our services title*/
-.section-title {
-  text-align: center;
-  color: #007a3f;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  margin-top: auto;
-}
-
-.section-title {
-  text-align: center;
-  color:#007a3f; /* Mop & Marvel green */
-  font-size: 3.8rem; /* Bigger than default */
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-/*________________________________________________________
-Video Background
-_________________________________________________________*/
-/* 🎥 Video Background */
+/* --- Video Background Styles (Consolidated) --- */
 .video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
 }
 
 .video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2); /* ← Adjust transparency here */
-  z-index: -1;
-  pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* 💬 Why Choose Us */
+/* --- Section Headings (Consolidated) --- */
+
+/* Targets h2 for About and Services pages */
+.about-page h2, .services-page h2 {
+    text-align: center;
+    color: #007a3f;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Targets the main section title */
+.section-title {
+    text-align: center;
+    color:#007a3f; 
+    font-size: 3.8rem; 
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* --- Why Choose Us (Consolidated) --- */
 .why-choose {
-  padding: 50px 20px;
+    padding: 50px 20px;
 }
 
 .why-choose ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-  line-height: 2;
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 2;
 }
 
-/* 🎁 Offer Section */
+/* --- Offer Section (Consolidated) --- */
 .offer {
-  background: #007a3f;
-  color: #fff;
-  padding: 60px 20px;
+    background: #007a3f;
+    color: #fff;
+    padding: 60px 20px;
 }
 
-.offer h2,
-.offer span {
-  color: #d8b200;
-  font-weight: bold;
+.offer h2, .offer span {
+    color: #d8b200;
+    font-weight: bold;
 }
 
 .offer .btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: #d8b200;
-  color: #007a3f;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #d8b200;
+    color: #007a3f;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
 .offer .btn:hover {
-  background: #fff;
-  color: #007a3f;
+    background: #fff;
+    color: #007a3f;
 }
 
-/* 🧼 Footer */
+/* --- Footer (Consolidated) --- */
 footer {
-  background: #007a3f;
-  color: #d1a400;
-  text-align: center;
-  padding: 20px;
+    background: #007a3f;
+    color: #d1a400;
+    text-align: center;
+    padding: 20px;
 }
 
-/* 🧹 Mop Animation */
+/* --- Other Hero Images (Consolidated) --- */
 .mop-image {
-  position: relative;
-  top: -490px;
-  animation: move-mop 5s infinite;
-  width: 70px;
+    position: relative;
+    top: -490px;
+    animation: move-mop 5s infinite;
+    width: 70px;
 }
 
-/* 🛡️ Insurance Badge */
 .insurance-badge {
-  position: absolute;
-  width: 70px;
+    position: absolute;
+    width: 70px;
 }
+
+
 /* =========================================================
-   MOBILE RESPONSIVENESS FIX (max-width: 768px)
-   ========================================================= */
+ MOBILE RESPONSIVENESS FIX (max-width: 768px)
+ ========================================================= */
 
 @media (max-width: 768px) {
     
@@ -404,27 +301,102 @@ footer {
     body {
         width: 100%;
         max-width: 100%;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
+        overflow-x: hidden; 
     }
 
     section {
         width: 100%;
         max-width: 100%;
-        padding: 40px 15px; /* Adjusts section padding */
+        padding: 40px 15px; 
     }
     
-   
-
-    /* Content Fixes */
-    /* Forces any side-by-side content (like services) to stack */
-    .services-container, .about-content {
-        flex-direction: column !important; 
-        padding: 10px;
-    }
-
-    /* Ensures all images scale down */
     img {
         max-width: 100%;
         height: auto;
+    }
+    
+    /* ------------------------------------------- */
+    /* 🔴 NAVBAR FIX: COMPACT STACKING (FINAL FIX) */
+    /* ------------------------------------------- */
+ @media (max-width: 768px) {
+    
+     section {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 15px; 
+    }
+    
+    /* CRITICAL FIX 2: Navbar Reset (Stacks logo, links, and button) */
+    .navbar {
+        display: block; 
+        width: 100%;
+        padding: 15px 10px; 
+    }
+
+    .logo, .call-button {
+        display: block; 
+        text-align: center;
+        margin: 10px 0; 
+    }
+
+
+    .nav-links {
+        display: block; 
+        width: 100%;
+        margin: 5px 0 0 0 !important; 
+        padding: 0 !important; 
+        text-align: center;
+    }
+
+    .nav-links li {
+        display: block; 
+        padding: 0 !important; 
+    }
+
+    .nav-links a {
+        /* Minimal vertical padding on the link itself */
+        padding: 2px 0 !important; 
+        font-size: 1em !important; 
+        line-height: 1.2 !important; 
+        display: block; 
+    }
+
+    .call-button {
+        margin: 5px auto !important; 
+        padding: 0 !important;
+    }
+
+    .call-button a {
+        /* Style the link inside the button container for mobile */
+        display: block;
+        margin: 0 auto;
+        padding: 5px 10px !important;
+        font-size: 0.9em !important;
+        border-radius: 5px !important;
+        max-width: 60%; /* Keeps the button from being too wide */
+    }
+    
+    /* ------------------------------------------- */
+    /* 🟢 OTHER PAGE/SECTION FIXES */
+    /* ------------------------------------------- */
+
+    /* About Page Container Fix (Smaller edges/borders) */
+    .about-section {
+        padding: 25px 15px !important; 
+        border-radius: 10px !important; 
+        margin: 10px 10px !important; 
+    }
+
+    /* Services Heading Fix (Smaller title) */
+    .Services h2, .section-title {
+        font-size: 2rem !important; 
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+    }
+
+    /* Content Fixes */
+    .services-container, .about-content {
+        flex-direction: column !important; 
+        padding: 10px;
     }
 }

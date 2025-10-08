@@ -213,44 +213,42 @@ footer {
     position: relative; /* Needed for z-index to work */
     z-index: 10; /* Ensures footer is also above the video */
 }
-
 /* =========================================================
    MOBILE RESPONSIVENESS FIX (max-width: 768px)
    ========================================================= */
 
 @media (max-width: 768px) {
     
-    /* CRITICAL FIX 1: Body/Section Overrides */
-    body {
+     section {
         width: 100%;
         max-width: 100%;
-        overflow-x: hidden; /* Prevents horizontal scrolling */
+        padding: 40px 15px; 
     }
 
-    section {
-        width: 100%;
-        max-width: 100%;
-        padding: 40px 15px; /* Adjusts section padding */
-    }
+   .navbar {
+       display: block; 
+
+       /* Sets the width to 90% and centers it, creating the nice flow */
+       width: 90% !important; 
+    max-width: 90% !important;
+    margin: 15px auto !important; /* Centers it with vertical spacing */
     
-    /* CRITICAL FIX 2: Aggressive Navbar Reset */
-    .navbar {
-        /* Overrides desktop Flex/Grid */
-        display: block; 
-        
-        width: 100%;
-        padding: 15px 10px; 
-    }
+    /* Ensures the desktop rounded corners are slightly reduced on mobile */
+    border-radius: 10px !important; 
+    
+    /* Reduced padding for compact look */
+    padding: 8px 10px !important; 
+}
 
     .logo, .call-button {
         display: block; 
         text-align: center;
-        margin: 10px 0; /* Add vertical space */
+        margin: 10px 0; 
     }
 
-    /* CRITICAL FIX 3: Nav Links Fix (The element that breaks the most) */
+    /* CRITICAL FIX 3: Nav Links Fix (Ensures links stack or wrap) */
     .nav-links {
-        display: block; /* Ensures links stack vertically */
+        display: block; 
         width: 100%;
         margin-top: 10px;
         text-align: center;
@@ -261,16 +259,61 @@ footer {
         padding: 5px 0;
     }
 
+    /* ------------------------------------------- */
+    /* 🟢 OTHER PAGE/SECTION FIXES (Consolidated) */
+    /* ------------------------------------------- */
+
+    /* Service Card Stacking */
+    .Service-cards {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
     /* Content Fixes */
-    /* Forces any side-by-side content (like services) to stack */
     .services-container, .about-content {
         flex-direction: column !important; 
         padding: 10px;
     }
+    
+    /* Services/General Heading Fix (Smaller title) */
+    .Services h2, .section-title {
+        font-size: 2rem !important; 
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+    }
+    
+    /* Testimonials/Coming Soon Section Fix */
+    .coming-soon {
+        margin-top: 0 !important;
+        padding: 40px 15px !important;
+    }
 
-    /* Ensures all images scale down */
-    img {
-        max-width: 100%;
-        height: auto;
+    /* Reset Image Absolute Positioning */
+    .hero-img {
+        height: auto; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        padding: 20px 0;
+    }
+    
+    .hero-img img {
+        position: static !important;
+        margin: 10px auto; 
+        max-width: 85%; 
+        left: auto; right: auto; top: auto; bottom: auto;
+    }
+
+    .insurance-badge {
+        order: -1; 
+        max-width: 80px; 
+        margin-bottom: 20px;
+    }
+    
+    .cleaning-lady {
+        border-radius: 8px; 
     }
 }

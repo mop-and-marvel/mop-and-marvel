@@ -193,7 +193,7 @@ html, body {
     
     /* Try 0px to force it to the very top corner */
     bottom: 277px;    
-    left: 630px;   
+    left: 820px;   
 
     /* Sizing */
     width: 80px; 
@@ -212,7 +212,7 @@ html, body {
     /* Positioning */
     position: absolute;
     bottom: 60px; 
-    right: 620px;
+    right: 810px;
     
     /* Sizing (Consolidated and adjusted) */
     width: 250px; /* Use 250px for a smaller size */
@@ -248,7 +248,7 @@ html, body {
     position: absolute;
     /* Adjust these values to position the mop freely */
     bottom: 450px; /* Example: 300px up from the bottom (this helps me move it to the top) of the hero section */
-    left: 800px;  /* Example: 10px from the left of the hero section */
+    left: 990px;  /* Example: 10px from the left of the hero section */
     
     /* --- Sizing (Adjust as needed) --- */
     width: 200px; /* Example size */

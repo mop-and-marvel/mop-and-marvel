@@ -183,23 +183,52 @@ html, body {
     width: 100%;
 }
 
-/* ___________________________________________________________________ */
-/* IMAGE STYLES                             */
-/* ___________________________________________________________________ */
+/* ------------------------------------------------------------- */
+/* NEW Container Setup for Reliability */
+/* ------------------------------------------------------------- */
 
+/* 1. Make the main header a FLEX CONTAINER to center its main children */
+.hero {
+    position: relative;
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    
+    /* FIX: Use Flexbox to manage the layout and guarantee horizontal centering */
+    display: flex;
+    flex-direction: column; /* Stack children (title, image group) vertically */
+    align-items: center;    /* Centers children horizontally (SOLVES CENTERING ISSUE) */
+    
+    /* text-align: center; is no longer needed on the flex parent but is harmless */
+}
+
+/* 2. Container for the Cleaning Lady and her Badge */
+.cleaning-image-group {
+    /* IMPORTANT: This makes the badge's absolute position relative to THIS container */
+    position: relative; 
+    
+    /* Remove old margin: auto (Flexbox handles centering now) */
+    /* margin: 50px auto 20px auto; <-- REMOVED */
+    margin-top: 50px; /* Keep vertical spacing */
+    margin-bottom: 20px;
+    
+    /* Set display to block; Flexbox ensures this block is centered */
+    display: block; 
+}
+
+
+/* ------------------------------------------------------------- */
 /* Insurance badge adjustments */
+/* ------------------------------------------------------------- */
 .insurance-badge {
     position: absolute; 
     
-    /* Try 0px to force it to the very top corner */
-    bottom: 277px;    
-    left: 820px;   
-
-    /* Sizing */
-    width: 80px; 
-    height: auto; 
+    /* TWEAKED: to fix positioning */
+    top: 1px;      
+    right: 190px;    
     
-    /* Layering: Use a massive z-index to ensure visibility */
+    /* Sizing */
+    width: 60px; /* TWEAKED: to fix width  */
+    height: auto; 
     z-index: 9999; 
     
     /* Visual Styles */
@@ -207,15 +236,15 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* ------------------------------------------------------------- */
 /* Styling for the cleaning lady image (LADY.JPG) */
+/* ------------------------------------------------------------- */
 .cleaning-lady {
-    /* Positioning */
-    position: absolute;
-    bottom: 60px; 
-    right: 810px;
+    /* The image itself is now centered via the Flex container's alignment */
+    position: static; 
     
-    /* Sizing (Consolidated and adjusted) */
-    width: 250px; /* Use 250px for a smaller size */
+    /* Sizing (Consolidated) */
+    width: 250px; 
     max-width: 80%; 
     height: auto; 
     
@@ -226,9 +255,9 @@ html, body {
     object-fit: cover; 
 }
 
-/* ___________________________________________________________________ */
-/* MOP IMAGE ANIMATION                       */
-/* ___________________________________________________________________ */
+/* ------------------------------------------------------------- */
+/* MOP IMAGE ANIMATION (The Mop image is positioned absolutely relative to .hero) */
+/* ------------------------------------------------------------- */
 
 /* Defines the back-and-forth motion */
 @keyframes mopSlide {
@@ -236,51 +265,40 @@ html, body {
         transform: translateX(0); 
     }
     50% {
-        transform: translateX(-40px); /* Slides 40px left */
+        transform: translateX(-40px);
     }
     100% {
-        transform: translateX(0); /* Returns to start (completes the cycle) */
+        transform: translateX(0);
     }
 }
 
 .mop-image {
     /* --- Positioning --- */
     position: absolute;
-    /* Adjust these values to position the mop freely */
-    bottom: 450px; /* Example: 300px up from the bottom (this helps me move it to the top) of the hero section */
-    left: 990px;  /* Example: 10px from the left of the hero section */
     
-    /* --- Sizing (Adjust as needed) --- */
-    width: 200px; /* Example size */
+    /* TWEAKED: Using your custom positioning */
+    top: -10px; 
+    right: 45%; 
+    
+    /* --- Sizing (Consolidated) --- */
+    width: 100px; 
     height: auto;
     
     /* --- Animation Properties --- */
-    /* 1. Apply the animation name */
     animation-name: mopSlide; 
-    /* 2. Set the duration of one full back-and-forth cycle */
     animation-duration: 2s; 
-    /* 3. Make the motion continuous (never stop) */
     animation-iteration-count: infinite; 
-    /* 4. Ensure it goes back and forth smoothly, not just instantly resetting */
     animation-direction: alternate; 
-    /* 5. Set the motion speed (optional: 'ease-in-out' makes it slow down at the edges) */
     animation-timing-function: ease-in-out; 
 }
 
-/* Applies the animation to the mop lady image (MOP.PNG) */
-.mop-image {
-        
-    /* ⭐ Sizing: Change this value to resize the image! */
-    width: 100px; /* Example: Use 50px for smaller, 150px for larger */
-    height: auto;
-    
-    /* Animation Properties (These remain the same) */
-    animation-name: mopSlide; 
-    animation-duration: 2s; 
-    animation-iteration-count: infinite; 
-    animation-direction: alternate; 
-    animation-timing-function: ease-in-out; 
+/* Ensure the title is centered */
+.site-title {
+    text-align: center;
+    font-size: 2.5rem; 
+    margin-bottom: 20px;
 }
+
 
 /* ___________________________________________________________________ */
 /* OTHER SECTIONS                              */
